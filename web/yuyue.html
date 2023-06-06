@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<!-- html由若干个标签组成,
+可以形成各种各样的网页
+div标签是一个容器标签
+-->
+<!-- 样式，用来修饰标签，对标签加一些特殊效果 -->
+<style type="text/css">
+    .top_right{
+        width: 360px;
+        height: 100px;
+        /* border: solid 1px red; */
+        float: right;
+    }
+    .trt{
+        width: 57px;
+        height: 64px;
+        float: left;
+        /* border: solid 1px red; */
+        background:url(img/ver_jy.png) no-repeat;
+        line-height: 60px;
+        text-align: center;
+        margin-left: 10px;
+        font-size: 14px;
+        transition: 1s;
+    }
+    .trt:hover{
+        background-position: 0px -64px;
+        color: white;
+    }
+    .tr2,.tr3,.tr4,.tr5{
+        margin-top: 10px;
+    }
+    .tr1{
+        color: white;
+        background:url(img/ver_jy.png) no-repeat;
+        background-position: 0px -64px;
+    }
+    .tr2{
+        color: rgb(51, 99, 160);
+        background:url(img/ver_yg.png) no-repeat;
+    }
+    .tr3{
+        color: rgb(244,144,25);
+        background:url(img/ver_ln.png) no-repeat;
+    }
+    .tr4{
+        color: rgb(199,166,155);
+        background:url(img/ver_tj.png) no-repeat;
+    }
+    .tr5{
+        color:rgb(184,83,124);
+        background:url(img/ver_en.png) no-repeat;
+    }
+    .line{
+        width: 100%;
+        height: 10px;
+        border-top:solid 1px rgb(229,229,229);
+    }
+    .nav{
+        width: 1200px;
+        height: 40px;
+        margin: auto;
+    }
+    /*去掉ul,li自带的内间距*/
+    *{
+        padding: 0px;
+    }
+    /*标签选择器*/
+    li{
+        list-style: none;
+        float: left;
+        margin: 0px 20px 0px 28px;
+        height: 30px;
+        font-size: 18px;
+        transition: 0.8s;
+        position: relative;
+    }/*修饰的对象是:
+    class="nav_ul"对象中的第三个子对象
+    */
+    .nav_ul > li:nth-child(3){
+        border-bottom: solid 6px rgb(51,99,160);
+    }
+
+    .nav_ul >li::after{
+        content: '';
+        display: inline-block;
+        position: absolute;
+        background-color: rgb(51, 99, 160);
+        left: 50%;
+        width: 0px;
+        bottom: -5.8px;
+        transition: 1s;
+    }
+        /*鼠标移动到li上时的样式*/
+        .nav_ul > li:nth-last-child(n+2):hover::after{
+        width: 100%;
+        left: 0px;
+        height: 6px;
+    }
+    /* .home > div{
+        position: absolute;
+        left: 0px;
+        bottom: -5.5px;
+        width: 0px;
+        height: 0px;
+        background-color:rgb(51,99,160);
+        transition: 0.8s;
+    }
+    .home:hover > div{
+        width: 100%;
+        height: 6px;
+    } */
+
+</style>
+
+<body>
+    <!-- <h1>标题标签</h1>
+    <img src="img/62964b89aa11365f.png"  /> -->
+    <div style="width: 1200px;height: 150px;margin: auto; ">
+        <div style="width: 360px;height: 120px;float: left;">
+            <img src="img/62964b89aa11365f.png"/>
+        </div>
+
+        <div class="top_right">
+            <div class="trt tr1">
+                就医版
+            </div>
+            <div class="trt tr2">
+                员工版
+            </div>
+            <div class="trt tr3">
+                老年版
+            </div>
+            <div class="trt tr4">
+                体检版
+            </div>
+            <div class="trt tr5">
+                English
+            </div>
+        </div>
+
+    </div>
+
+    <div class="line"></div>
+    <style>
+        .nav_ul >li{
+            overflow: hidden;
+        }
+        .nav_ul >li:hover{
+            overflow: visible;
+        }
+        .nav_ul >li>div{
+            width: 200%;
+            display: inline-block;
+            position: absolute;
+            left: -50%;
+            top: 38px;
+            min-height: 100%;
+            z-index: 1;
+            background-color: rgb(51, 99, 160, 0);
+            border-radius: 2px;
+            transition: 1s;
+        }
+        .nav_ul >li:hover>div{
+            background-color: rgb(51, 99, 160, 1);
+        }
+        ul{
+            margin: 0px;
+            padding: 0px;
+        }
+        .nav_ul >li>div>ul>li{
+            width:100%;
+            height: 35px;
+            margin: 0px;
+            padding: 0px;
+            color: white;
+            font-size: 16px;
+            text-align: center;
+            line-height: 33px;
+        }
+        .nav_ul >li>div>ul>li:hover{
+            background-color: rgb(41, 79, 128);
+        }
+    </style>
+    <div class="nav">
+        <ul class="nav_ul">
+            <li>首页
+                
+            </li>
+            <li>医院概况
+
+                <div>
+                    <ul>
+                        <li>医院简介</li>
+                        <li>领导班子</li>
+                        <li>机构设置</li>
+                        <li>医学教育</li>
+                        <li>科学研究</li>
+                    </ul>
+                </div>
+
+            </li>
+            <li>就诊服务
+                <div>
+                    <ul>
+                        <li>就医指南</li>
+                        <li>预约挂号</li>
+                        <li>健康体检</li>
+                        <li>在线问诊</li>
+                    </ul>
+                </div>
+            </li>
+            <li>专家介绍
+                <div>
+                    <ul>
+                        <li>科室导航</li>
+                        <li>医疗技术</li>
+                    </ul>
+                </div>
+            </li>
+            <li>医联体及对外合作
+                <div>
+                    <ul>
+                        <li>简介</li>
+                        <li>新闻动态</li>
+                        <li>对口帮扶</li>
+                        <li>合作办院</li>
+                        <li>紧密医联体</li>
+                        <li>专科共建</li>
+                        <li>专科联盟</li>
+                        <li>远程医疗</li>
+
+                    </ul>
+                </div>
+            </li>
+            <li>招聘/招标/进修
+                <div>
+                    <ul>
+                        <li>人事招聘</li>
+                        <li>博士后招聘</li>
+                        <li>进修申请</li>
+                        <li>招标采购</li>
+                    </ul>
+                </div>
+            </li>
+            <li>新闻中心
+                <div>
+                    <ul>
+                        <li>医院要闻</li>
+                        <li>综合新闻</li>
+                        <li>媒体聚焦</li>
+                        <li>专题专栏</li>
+                    </ul>
+                </div>
+            </li>
+            <li>院务公开
+                <div>
+                    <ul>
+                        <li>预算公告</li>
+                        <li>决算公告</li>
+                        <li>药品诊疗查询</li>
+                    </ul>
+                </div>
+            </li>
+            <li>其他
+                <div style="width: 200px;left: -80px;">
+                    <ul>
+                        <li>慈善救助</li>
+                        <li>文史馆暨职工教育基地</li>
+                        <li>健康教育</li>
+                    </ul>
+                </div>
+            </li>
+            <li class="search"><img src="img/search.svg"></li>
+        </ul>
+    </div>
+    <style>
+        .search{
+            margin-right: 0px;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;     /* 显示为圆形*/
+            transition: 1s;     /*动画效果时间*/
+            text-align: center;     /* 让li中的img水平居中*/
+            line-height: 30px;      /* 让li中的img垂直居中*/
+        }
+        .search:hover{
+            background-color: rgb(51,99,160);
+        }
+        </style>
+
+    <style type="text/css">
+        .wechat{
+            width: 810;
+            background: url(img/ban_ab.jpg);
+            /* 背景图片居中 */
+            background-repeat : no-repeat ;
+            background-position: center center;
+            background-size: cover;
+            height: 260px;
+            text-align: center;
+            line-height: 260px;
+            font-size: 36px;
+            /* 加粗 */
+            font-weight: bold;
+            color: white;
+        }
+        .menu{
+            width: 1200px;
+            height: 30px;
+            margin: auto;
+        }
+        .menu_ul{
+            margin:0px;
+            padding:0px;
+        }
+        .menu_ul > li{
+            float:left;
+            margin: 0px;
+            padding: 0px;
+        }
+        .go_back{
+            width: 800px;
+            text-align: right;
+        }
+    </style>    
+
+
+    <div class="wechat">
+        微信预约
+    </div>
+    <div class="menu">
+        <ul class="menu_ul">
+            <li><img src="img/house.png"width="25",height="25"/></li>
+            <li>首页 > 就诊服务 > 预约挂号 > 微信预约</li>
+            <li class="go_back"> 返回</li>
+            </ul>
+    </div>
+
+    <style>
+        .main{
+            width:100%;
+            height: 800px;
+            background-color: rgb(246,246,248);
+        }
+        .main::before{
+            position: absolute;
+            content:'';
+            width:45%;
+            height:800px;
+            background:url(img/bg_blue.jpg);
+        }
+        .mains{
+            position: relative;
+            width:1200px;
+            height:600px;
+            margin:auto; /*相对外部容器居中*/
+            display: flex; /*子容器会水平布局*/
+        }
+        .mains_left{
+            width:200px;
+            height:420px;
+            margin-left:10px;
+            border-left:solid 1px white;
+        }
+        .mains_right{
+            width:1000px;
+            height:700px;
+            background:white;
+            margin-top:100px;
+            padding-left:20px;/*左内间距*/
+            padding-top:30px;/*上内间距*/
+            box-sizing:border-box;/*内间距不影响容器实际宽高*/
+            font-size:22px;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);/*阴影*/
+        }
+        a{
+            text-decoration: none;/*去掉下划线*/
+            color:black;
+        }
+        .mains_leftul > li a{
+            color:white;
+        }
+        .mains_leftul >li{
+            padding-left:50px;
+            box-sizing: border-box;
+            height:70px;
+        }
+        .mains_leftul >li:nth-child(n+2){
+            clear:both;
+            margin:0px;
+            padding:0px;
+            padding-left:20px;
+            height:70px;
+            text-align:left;
+        }
+        .active a{
+            font-size: 25px;
+        }
+        /* .active a::after{ */
+        .after{
+            content:'';
+            background: url(img/0yynav_act0.png);
+            width:27px;
+            height:27px;
+            position: absolute;
+            left:-42px;
+            top:10%;
+        }
+        .before{
+            position: relative;
+            width:42px;
+            height:1px;
+            background-color: white;
+            top:18px;
+            left:-66px;
+        }
+        .mains_leftul > li:nth-child(n+2) a::after{
+            content: '';
+            width: 12px;
+            height: 12px;
+            position: absolute;
+            border-radius: 50%;
+            background-color: white;
+            left: -6.5px;
+            top: 10%;
+        }
+        .mains_leftul > li:nth-child(n+2) a::before{
+            content: '';
+            position: relative;
+            display: inline-block;
+            width:0px;
+            height:1px;
+            background-color: white;
+            top:-5px;
+            left:-23px;
+            transition: 1s;
+        }
+        .mains_leftul > li:nth-child(n+2) a:hover::before{
+            width: 57px;
+        }
+        .photo{
+            clear: both;
+            width: 260px;
+            height: 300px;
+            /* background-color: red; */
+            position: relative;/*相对定位，只有加这个才能有left，bottom来定位*/
+            left: -80px;
+            bottom: -170px;
+        }
+    </style>
+
+    <div class="main">
+        <div class="mains">
+            <div class="mains_left">
+                <ul class="mains_leftul">
+                    <li class="active">
+                        <div class="after"></div>
+                        <div class="before"></div>
+                        <a href="http://www.baidu.com">微信预约</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alipay.com">支付宝预约</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alipay.com">电话预约</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alipay.com">现场预约</a>
+                    </li>
+                    <li>
+                        <a href="http://www.alipay.com">其他预约</a>
+                    </li>
+                </ul>
+                <div class="photo">
+                    <img src="img/0yy_pic0.png"/>
+                </div>
+            </div>
+            <div class="mains_right">
+                |  【官网公众号预约】
+                <p><!--会换行，且前后隔开一行-->
+                    <img src="img/75b83ca786315f4a.png" width="200" height="200"/>
+                </p>
+                |  【微信小程序预约】
+                <p>
+                    <img src="img/s_3d4777d80160bac8.png" width="200" height="200"/>
+                </p>
+            </div>
+        </div>
+    </div>
+
+
+
+    <style>
+        /* .photo2{
+            position: fixed;
+            right: 0px;
+            bottom: 50%;
+            width: 100px;
+            height: 100px;
+        } */
+        .foot{  
+            clear: both;
+            width:100%;
+            height:337px;
+            margin-top:50px;
+            background:url(img/footbg.jpg) no-repeat;
+            /* 背景图片居中 */
+            background-repeat : no-repeat ;
+            background-position: center center;
+            background-size: cover;
+        }
+        .foot_main{
+          
+            width:1200px;
+            height:270px;
+            margin:auto;
+            display:flex;/*让该元素的子元素水平排列*/
+            color:white;
+        }
+        .foot_main > div:nth-child(2){
+            width:1px;
+            height:160px;
+            background-color: rgb(161,161,162);
+            margin-left:80px;
+            margin-top:70px;
+            box-shadow:
+             0 2px 2px rgba(255, 255, 0, 0.1);/*阴影*/
+        }
+        .foot_main > div:nth-child(3){
+            margin-left:60px;
+            margin-top:65px;
+        }
+    </style>
+    <!-- <div class="photo2">
+        <img src="img/0yy_pic0.png" width="100" height="100"/>
+    </div> -->
+
+    <div class="foot">
+        <div class="foot_main">
+            <div>
+                <p style="font-size:25px;">联系我们</p>
+                <p style="font-size:16px;">东湖院区</p>
+                <p style="font-size:14px;line-height:23px;">
+                    地址：江西省南昌市永外正街17号<br/>
+                    投诉中心：0791-88695120（东湖院区）<br/>
+                    预约挂号专线：0791-88603000<br/>
+                    东湖院区门诊服务中心电话：0791-88694753<br/>
+                    东湖院区行政总值班电话：0791-88692748<br/>
+                </p>
+            </div>
+            <div>
+
+            </div>
+            <div>
+                <p  style="font-size:16px;">象湖院区</p>
+                <p style="font-size:14px;line-height:23px;">
+                    地址：江西省南昌市南昌县东岳大道1519号<br/>
+                    投诉中心：0791-86319620（象湖院区）<br/>
+                    预约挂号专线：0791-88603000<br/>
+                    象湖院区门诊服务中心电话：0791-86319356<br/>
+                    象湖院区行政总值班电话：0791-86319333<br/>
+                </p>
+            </div>
+            <div class="sec">
+                <div>书记院长信箱</div>
+                <div>友情链接</div>
+
+            </div>
+            <div class="bottom_right">
+                <div>
+                    <img src="img/75b83ca786315f4a.png" width="140" height="140"/>
+                </div>
+                <div>
+                    官方公众号
+                </div>
+            </div>
+        </div>
+        <div class="bottom_line">
+
+            <div>
+                网站备案号：赣ICP备2022003284号 赣公网安备：36010202000352号
+            </div>
+        </div>
+    </div>
+    <style>
+        .sec{
+            width: 200px;
+            height: 120px;
+            margin-left:60px;
+            margin-top:80px;
+        }
+        .sec > div{
+            transition:0.5s;
+            width: 150px;
+            height: 40px;
+            background-color: rgb(129,129,131);
+            text-align: center;
+            line-height: 35px;
+            font-size: 16px;
+        }
+        .sec > div:nth-child(2){
+            margin-top: 15px;
+        }
+        .sec > div:nth-child(2)::after{
+            content: '';
+            display: inline-block;
+            border-top: 5px solid;
+            border-right: 5px solid transparent;/*transparent 透明*/
+            border-left: 5px solid transparent;
+            border-bottom: 0px;
+            vertical-align: middle;
+            margin-left: 10px;
+            transition:1s;
+        }
+        .sec > div:nth-child(2):hover::after{
+            transform: rotate(360deg);/*旋转360度*/
+        }
+        .sec > div:hover{
+            background-color: rgb(51,99,160);
+        }
+        .bottom_right{
+            width: 150px;
+            height: 150px;
+            margin-left:75px;
+            margin-top:80px;
+            text-align: center;
+        }
+        .bottom_right > div:nth-child(2){
+            text-align: center;
+            font-size: 12px;
+        }
+        .bottom_line{
+            text-align: center;
+            clear:both;
+            width:1200px;
+            height:1px;
+            margin-top:80px;
+            padding-left: 10px;
+            background-color: rgb(158,159,161);
+            margin: 0 auto;
+        }
+        .bottom_line > div:nth-child(1){
+            padding-top: 20px;
+            padding-bottom: 10px;
+            text-align: left;
+            font-size: 14.5px;
+            color: white;
+        }
+    </style>
+</body>
+</html>
